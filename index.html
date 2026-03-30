@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>きもちたちの じこしょうかい — にんげんの こころの 30万年史</title>
+<meta property="og:title" content="きもちたちの じこしょうかい — にんげんの こころの 30万年史">
+<meta property="og:description" content="アイちゃん・コワイ・コッキ・イカリ・カナシミ先輩 — 5つの感情が自己紹介する絵本">
+<meta property="og:url" content="https://osakenpiro.github.io/kimochi-no-ehon/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFDF5;
+    --warm-brown: #5D4037;
+    --page-shadow: rgba(93, 64, 55, 0.12);
+    --text-dark: #3E2723;
+    --ch1-color: #C62828;
+    --ch2-color: #4A148C;
+    --ch3-color: #F9A825;
+    --ch4-color: #E65100;
+    --ch5-color: #1565C0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(135deg, #FCE4EC 0%, #FFFDF5 50%, #E8EAF6 100%);
+    font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .cover { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 40% 40%, rgba(233,30,99,0.08) 0%, transparent 50%); }
+  .cover-title { font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; text-align: center; position: relative; z-index: 1; line-height: 1.4; color: #4E342E; text-shadow: 2px 2px 0 rgba(255,255,255,0.8); }
+  .cover-subtitle { font-size: clamp(1rem, 2.5vw, 1.5rem); color: #4E342E; opacity: 0.7; margin-top: 1rem; position: relative; z-index: 1; text-align: center; }
+  .cover-characters { display: flex; gap: 1.5rem; margin-top: 3rem; position: relative; z-index: 1; flex-wrap: wrap; justify-content: center; }
+  .cover-char { font-size: 3.5rem; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); }
+  .cover-char:nth-child(2) { animation-delay: 0.5s; }
+  .cover-char:nth-child(3) { animation-delay: 1s; }
+  .cover-char:nth-child(4) { animation-delay: 1.5s; }
+  .cover-char:nth-child(5) { animation-delay: 2s; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  .scroll-hint { position: relative; z-index: 1; margin-top: 3rem; font-size: 0.9rem; color: #4E342E; opacity: 0.5; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+  .series-badge { position: relative; z-index: 1; margin-top: 1.5rem; padding: 0.5rem 1.5rem; background: rgba(78,52,46,0.08); border: 1px solid rgba(78,52,46,0.15); border-radius: 2rem; font-size: 0.85rem; color: #4E342E; text-align: center; line-height: 1.6; }
+  .series-badge a { color: #4E342E; text-decoration: underline; }
+  .cover-illustration { width: 80%; max-width: 500px; margin: 2rem auto; display: block; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border: 4px solid rgba(255,255,255,0.6); position: relative; z-index: 1; }
+  .illustration { width: 100%; max-width: 600px; margin: 1.5rem auto; display: block; border-radius: 0.8rem; box-shadow: 0 4px 16px rgba(0,0,0,0.1); border: 3px solid rgba(93,64,55,0.1); }
+  .page { max-width: 800px; margin: 3rem auto; padding: 3rem 2.5rem; background: var(--cream); border-radius: 1rem; box-shadow: 0 4px 20px var(--page-shadow), inset 0 0 60px rgba(93,64,55,0.03); position: relative; border: 1px solid rgba(93,64,55,0.1); }
+  .page::before { content: ''; position: absolute; left: 2rem; top: 0; bottom: 0; width: 2px; background: rgba(93,64,55,0.08); }
+  .page-number { position: absolute; bottom: 1rem; right: 1.5rem; font-size: 0.8rem; color: var(--warm-brown); opacity: 0.4; }
+  .chapter-header { text-align: center; margin-bottom: 2rem; }
+  .chapter-icon { font-size: 4rem; display: block; margin-bottom: 0.5rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+  .chapter-title { font-size: 1.8rem; font-weight: 900; line-height: 1.3; }
+  .chapter-subtitle { font-size: 1rem; opacity: 0.6; margin-top: 0.3rem; }
+  .color-ch1 { color: var(--ch1-color); }
+  .char-card.ch1 { border-color: var(--ch1-color); }
+  .rel-fill.ch1 { background: linear-gradient(90deg, var(--ch1-color), var(--ch1-color-light, var(--ch1-color))); }
+  .color-ch2 { color: var(--ch2-color); }
+  .char-card.ch2 { border-color: var(--ch2-color); }
+  .rel-fill.ch2 { background: linear-gradient(90deg, var(--ch2-color), var(--ch2-color-light, var(--ch2-color))); }
+  .color-ch3 { color: var(--ch3-color); }
+  .char-card.ch3 { border-color: var(--ch3-color); }
+  .rel-fill.ch3 { background: linear-gradient(90deg, var(--ch3-color), var(--ch3-color-light, var(--ch3-color))); }
+  .color-ch4 { color: var(--ch4-color); }
+  .char-card.ch4 { border-color: var(--ch4-color); }
+  .rel-fill.ch4 { background: linear-gradient(90deg, var(--ch4-color), var(--ch4-color-light, var(--ch4-color))); }
+  .color-ch5 { color: var(--ch5-color); }
+  .char-card.ch5 { border-color: var(--ch5-color); }
+  .rel-fill.ch5 { background: linear-gradient(90deg, var(--ch5-color), var(--ch5-color-light, var(--ch5-color))); }
+  .char-card { background: white; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; border-left: 5px solid; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .char-name { font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; gap: 0.5rem; }
+  .char-species { font-size: 0.8rem; opacity: 0.5; font-weight: 400; font-style: italic; }
+  .char-quote { font-size: 1.1rem; margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 0.5rem; position: relative; line-height: 1.7; }
+  .char-quote::before { content: '「'; font-size: 1.5rem; opacity: 0.3; position: absolute; top: 0.3rem; left: 0.5rem; }
+  .relationship { display: flex; align-items: center; gap: 0.8rem; margin: 1rem 0; font-size: 0.95rem; }
+  .rel-label { font-weight: 700; white-space: nowrap; }
+  .rel-bar { flex: 1; height: 12px; background: #EEE; border-radius: 6px; overflow: hidden; }
+  .rel-fill { height: 100%; border-radius: 6px; }
+  .story { font-size: 1.05rem; line-height: 2; margin: 1.2rem 0; }
+  .story strong { color: var(--warm-brown); }
+  .highlight-box { background: linear-gradient(135deg, rgba(93,64,55,0.04), rgba(93,64,55,0.08)); border-radius: 0.8rem; padding: 1.5rem; margin: 1.5rem 0; border: 1px dashed rgba(93,64,55,0.2); }
+  .highlight-box h3 { font-size: 1.1rem; margin-bottom: 0.8rem; }
+  .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.8rem; margin: 0.5rem 0; }
+  .item-card { background: white; border-radius: 0.8rem; padding: 0.8rem 0.5rem; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: transform 0.2s; }
+  .item-card:hover { transform: translateY(-3px); }
+  .item-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.3rem; }
+  .item-label { font-size: 0.8rem; font-weight: 700; opacity: 0.7; line-height: 1.3; }
+  .finale { text-align: center; padding: 3rem 2rem; max-width: 800px; margin: 3rem auto; }
+  .finale-title { font-size: 1.8rem; font-weight: 900; color: #4E342E; margin-bottom: 1.5rem; }
+  .finale-message { font-size: 1.1rem; line-height: 2; color: var(--text-dark); opacity: 0.8; }
+  .emoji-parade { font-size: 2.5rem; margin: 2rem 0; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .series-links { margin-top: 2rem; font-size: 0.95rem; line-height: 2; }
+  .series-links a { color: #4E342E; text-decoration: underline; }
+  .colophon { margin-top: 3rem; font-size: 0.8rem; opacity: 0.4; }
+  @media (max-width: 600px) { .page { margin: 1.5rem 0.8rem; padding: 2rem 1.5rem; } .page::before { left: 1rem; } }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-title">きもちたちの じこしょうかい</div>
+  <div class="cover-subtitle">— にんげんの こころの 30万年史 —</div>
+  <div class="cover-characters">
+    <span class="cover-char">💗</span>
+    <span class="cover-char">😨</span>
+    <span class="cover-char">✨</span>
+    <span class="cover-char">😡</span>
+    <span class="cover-char">😢</span>
+  </div>
+  <img src="images/cover.png" alt="きもちたちの じこしょうかい" class="cover-illustration" loading="lazy">
+  <div class="series-badge">📚 じこしょうかいシリーズ 第14巻 ｜ <a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a></div>
+  <div class="scroll-hint">↓ スクロールして よんでね ↓</div>
+</section>
+
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🙏</span>
+    <div class="chapter-title">はじめに</div>
+  </div>
+  <p class="story">にんげんの からだは ⑧ぞうきたちで まなんだ。にんげんの しゃかいは ⑫しくみたちで まなんだ。<br><br>でも にんげんの いちばん ふしぎな ところは、<strong>きもち</strong> だ。<br>うれしい、かなしい、こわい、いかる、すき。<br>なぜ こんなに いろいろな きもちが あるのか？<br>こたえ：<strong>きもちは、いきのこるための どうぐ だったから。</strong></p>
+  <span class="page-number">1</span>
+</section>
+
+
+<!-- CHAPTER 1 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">💗</span>
+    <div class="chapter-title color-ch1">だい1しょう：アイちゃん</div>
+    <div class="chapter-subtitle">— いのちを つなぐ ちから —</div>
+  </div>
+  <img src="images/ch1.png" alt="アイちゃん" class="illustration" loading="lazy">
+
+  <div class="char-card ch1">
+    <div class="char-name">💗 アイちゃん <span class="char-species">Love</span></div>
+    <div class="char-quote">わたしは たんに ドキドキ する だけじゃない。<br>あかちゃんを まもり、なかまを たすけ、みしらぬひとに やさしくする。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch1" style="width: 100%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">アイちゃんは <strong>愛</strong>。子育てに 手間のかかる にんげんの 赤ちゃんを まもるための しくみ。</p>
+  <p class="story">でも 愛は 親子だけじゃない。友情、恋愛、博愛。<br><strong>にんげんが 150人以上の 集団で くらせるのは、愛（と信頼）があるから。</strong></p>
+
+  <div class="highlight-box">
+    <h3>💡 アイちゃんの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">👶</span><span class="item-label">親子の愛</span></div>
+      <div class="item-card"><span class="item-emoji">💑</span><span class="item-label">恋愛</span></div>
+      <div class="item-card"><span class="item-emoji">🤝</span><span class="item-label">友情</span></div>
+      <div class="item-card"><span class="item-emoji">🫂</span><span class="item-label">共感</span></div>
+      <div class="item-card"><span class="item-emoji">🧬</span><span class="item-label">オキシトシン</span></div>
+      <div class="item-card"><span class="item-emoji">💌</span><span class="item-label">ラブソング</span></div>
+    </div>
+  </div>
+  <span class="page-number">2–3</span>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">😨</span>
+    <div class="chapter-title color-ch2">だい2しょう：コワイ</div>
+    <div class="chapter-subtitle">— いきのこるための けいほう —</div>
+  </div>
+  <img src="images/ch2.png" alt="コワイ" class="illustration" loading="lazy">
+
+  <div class="char-card ch2">
+    <div class="char-name">😨 コワイ <span class="char-species">Fear</span></div>
+    <div class="char-quote">こわい って おもったら にげろ。それが ぼくの しごと。<br>それで にげたから、きみの ご先祖は いきのこったんだ。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch2" style="width: 75%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">コワイは <strong>恐怖</strong>。いのちを まもる <strong>警報装置</strong>。<br>ヘビ、クモ、高所 — 本能的に こわがるものは、進化の 過程で <strong>本当に 危険だったもの</strong>。</p>
+  <p class="story">でも 現代では、プレゼンや SNSも こわい。<br><strong>いきのこるための 装置が、いまは ストレスの 原因にも なっている。</strong></p>
+
+  <div class="highlight-box">
+    <h3>💡 コワイの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🐍</span><span class="item-label">ヘビ恐怖</span></div>
+      <div class="item-card"><span class="item-emoji">🕷️</span><span class="item-label">クモ恐怖</span></div>
+      <div class="item-card"><span class="item-emoji">🏔️</span><span class="item-label">高所恐怖</span></div>
+      <div class="item-card"><span class="item-emoji">😰</span><span class="item-label">ストレス</span></div>
+      <div class="item-card"><span class="item-emoji">🎢</span><span class="item-label">恐怖の快感</span></div>
+      <div class="item-card"><span class="item-emoji">🧠</span><span class="item-label">扁桃体</span></div>
+    </div>
+  </div>
+  <span class="page-number">4–5</span>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">✨</span>
+    <div class="chapter-title color-ch3">だい3しょう：コッキ</div>
+    <div class="chapter-subtitle">— 「なぜ？」の はじまり —</div>
+  </div>
+  <img src="images/ch3.png" alt="コッキ" class="illustration" loading="lazy">
+
+  <div class="char-card ch3">
+    <div class="char-name">✨ コッキ <span class="char-species">Curiosity</span></div>
+    <div class="char-quote">なぜ そらは あおいの？ なぜ ぼくは ぼくなの？<br>この「なぜ？」が、ぜんぶの はじまり。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch3" style="width: 100%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">コッキは <strong>好奇心</strong>。にんげんを にんげんに した かんじょう。</p>
+  <p class="story">好奇心は <strong>情報への 報酬反応</strong> — 新しいことを 知ると 脳は ドーパミンを だす。<br>⑥かみさまも、⑤はつめいも、⑬かずも、ぜんぶ 好奇心から。<br><strong>好奇心は すべての シリーズの 起点。</strong></p>
+
+  <div class="highlight-box">
+    <h3>💡 コッキの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">❓</span><span class="item-label">なぜ？</span></div>
+      <div class="item-card"><span class="item-emoji">🔬</span><span class="item-label">科学の原動力</span></div>
+      <div class="item-card"><span class="item-emoji">🎨</span><span class="item-label">芸術の原動力</span></div>
+      <div class="item-card"><span class="item-emoji">🧠</span><span class="item-label">ドーパミン</span></div>
+      <div class="item-card"><span class="item-emoji">👶</span><span class="item-label">子どもの好奇心</span></div>
+      <div class="item-card"><span class="item-emoji">🚀</span><span class="item-label">宇宙探査</span></div>
+    </div>
+  </div>
+  <span class="page-number">6–7</span>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">😡</span>
+    <div class="chapter-title color-ch4">だい4しょう：イカリ</div>
+    <div class="chapter-subtitle">— ふこうせいへの サイレン —</div>
+  </div>
+  <img src="images/ch4.png" alt="イカリ" class="illustration" loading="lazy">
+
+  <div class="char-card ch4">
+    <div class="char-name">😡 イカリ <span class="char-species">Anger</span></div>
+    <div class="char-quote">ぼくは みにくい？ でも ぼくは「おかしい！」の サイレン だ。<br>かくめいは いつも、だれかの いかりから はじまった。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch4" style="width: 65%"></div></div>
+      <span>★★★☆☆</span>
+    </div>
+  </div>
+
+  <p class="story">イカリは <strong>怒り</strong>。不公正を 検知する センサー。<br>フランス革命も、公民権運動も、#MeTooも、怒りが 起点。</p>
+  <p class="story">でも コントロールしないと 暴力になる。<br><strong>怒りの エネルギーを 言葉や行動に 変換すること。それが ホーリツさんや ミンシュ先輩の やくわり。</strong></p>
+
+  <div class="highlight-box">
+    <h3>💡 イカリの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🔥</span><span class="item-label">革命</span></div>
+      <div class="item-card"><span class="item-emoji">✊</span><span class="item-label">社会運動</span></div>
+      <div class="item-card"><span class="item-emoji">😤</span><span class="item-label">ストレス</span></div>
+      <div class="item-card"><span class="item-emoji">🧠</span><span class="item-label">アドレナリン</span></div>
+      <div class="item-card"><span class="item-emoji">⚖️</span><span class="item-label">正義感</span></div>
+      <div class="item-card"><span class="item-emoji">🕊️</span><span class="item-label">非暴力</span></div>
+    </div>
+  </div>
+  <span class="page-number">8–9</span>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">😢</span>
+    <div class="chapter-title color-ch5">だい5しょう：カナシミ先輩</div>
+    <div class="chapter-subtitle">— おれが いるから よろこびが わかる —</div>
+  </div>
+  <img src="images/ch5.png" alt="カナシミ先輩" class="illustration" loading="lazy">
+
+  <div class="char-card ch5">
+    <div class="char-name">😢 カナシミ先輩 <span class="char-species">Sadness</span></div>
+    <div class="char-quote">おれは いやわれる。だれも かなしく なりたくない。<br>でも おれが いなかったら、よろこびも わからないだろ？</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch5" style="width: 80%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">カナシミ先輩は <strong>悲しみ</strong>。失ったものへの 反応。泣くことで 助けを よび、共感を よぶ。</p>
+  <p class="story">悲しみには おおきな ちからがある：<strong>創造</strong>。<br>ブルースは 悲しみから うまれた。文学の 名作は 喪失を えがく。<br><strong>悲しみは 芸術の 母であり、共感の 種。</strong></p>
+
+  <div class="highlight-box">
+    <h3>💡 カナシミ先輩の せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">😢</span><span class="item-label">涙</span></div>
+      <div class="item-card"><span class="item-emoji">🫂</span><span class="item-label">共感を呼ぶ</span></div>
+      <div class="item-card"><span class="item-emoji">🎵</span><span class="item-label">ブルース</span></div>
+      <div class="item-card"><span class="item-emoji">📖</span><span class="item-label">文学</span></div>
+      <div class="item-card"><span class="item-emoji">🧠</span><span class="item-label">セロトニン</span></div>
+      <div class="item-card"><span class="item-emoji">🌅</span><span class="item-label">朝が来る</span></div>
+    </div>
+  </div>
+  <span class="page-number">10–11</span>
+</section>
+
+
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">📖</span>
+    <div class="chapter-title">おわりに</div>
+  </div>
+  <p class="story">
+    💗に おそわったこと — <strong>「いのちを つなぐのは、きもち」</strong>。<br>
+    😨に おそわったこと — <strong>「こわいのは、いきている しょうこ」</strong>。<br>
+    ✨に おそわったこと — <strong>「なぜ？は すべての はじまり」</strong>。<br>
+    😡に おそわったこと — <strong>「おかしいと おもえるのは、やさしいから」</strong>。<br>
+    😢に おそわったこと — <strong>「かげが あるから、ひかりが みえる」</strong>。<br>
+  </p>
+  <div class="highlight-box">
+    <h3>🔑 3つの きほん</h3>
+    <p class="story" style="margin: 0;">
+      <strong>①  道具 — 感情はすべて生き残るための道具。いまは生き方の道具。</strong><br>
+      <strong>②  両面 — どの感情にも光と影がある。愛は執着に、怒りは暴力になりうる。</strong><br>
+      <strong>③  感じること — 感情を消すのではなく、感じて、名前をつけて、選ぶ。</strong>
+    </p>
+  </div>
+  <span class="page-number">12</span>
+</section>
+
+<section class="finale">
+  <img src="images/cover.png" alt="きもちたちの じこしょうかい" class="cover-illustration" loading="lazy">
+  <div class="finale-title">— おしまい —</div>
+  <div class="finale-message">
+    「きもちたちの じこしょうかい」<br>
+    え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ
+  </div>
+  <div class="series-links">
+    📚 じこしょうかいシリーズ<br>
+    <a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a>
+  </div>
+  <div class="colophon">※ このおはなしは わかりやすさを ゆうせんして かんりゃくかしています。</div>
+</section>
+
+</body>
+</html>
